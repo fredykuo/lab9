@@ -1,0 +1,18 @@
+#include <IRremote.h>
+int d=0;
+const int pin=6;
+IRsend irsend;
+
+void setup()
+{
+ 
+  pinMode(pin,INPUT);
+  
+}
+
+void loop() {
+  d=digitalRead(pin);
+    if(d==HIGH){
+    irsend.sendSony(0x4FB48B7,32);
+  }
+}
